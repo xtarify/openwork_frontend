@@ -1,0 +1,257 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+  }
+  
+  /* Contenedor principal que ocupa toda la altura de la ventana */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Navbar con solo logo, Inicio y Login, centrada horizontalmente */
+  .navbar {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 1rem;
+  }
+  
+  .login-btn {
+    background: #0080ff;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .login-btn:hover {
+    background: #006ce0;
+  }
+  
+  /* Contenido principal centrado vertical y horizontalmente */
+  .main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;  /* Centra horizontalmente */
+    align-items: center;      /* Centra verticalmente */
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  /* Secciones con estilo de tarjeta centradas */
+  .home-section, .step-section {
+    background: #fff;
+    padding: 2rem;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+    color: #000000;
+  }
+  
+  /* Títulos y subtítulos */
+  .main-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000000;
+  }
+  
+  .subtitle {
+    color: #777;
+    margin-bottom: 2rem;
+  }
+  
+  /* Botones primarios y secundarios */
+  .primary-btn {
+    background: #0080ff;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+  
+  .primary-btn:hover {
+    background: #006ce0;
+  }
+  
+  .secondary-btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .secondary-btn:hover {
+    background: #111;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+  
+  /* Inputs y selects */
+  select, input[type="text"], input[type="number"], input[type="email"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Barra de progreso, en línea y centrada */
+  .progress-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+  }
+  
+  .progress-step {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #ccc;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .progress-step.active {
+    background: #0080ff;
+  }
+  
+  /* Etiquetas de checkboxes */
+  .step-section label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .step-section label input[type="checkbox"] {
+    margin-right: 0.5rem;
+  }
+  
+  /* Responsividad básica: 
+     Aseguramos que en pantallas pequeñas el contenido 
+     sigue centrado y el max-width sigue funcionando */
+  @media (max-width: 480px) {
+    .home-section, .step-section {
+      padding: 1.5rem;
+      max-width: 90%;
+    }
+  
+    .logo {
+      font-size: 1rem;
+    }
+  
+    .login-btn {
+      padding: 0.5rem 0.8rem;
+    }
+  }
+  
+  /* Estilos del Chatbot */
+  .chatbot {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 490px; /* Aumentado para que sea más grande */
+    max-height: 600px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  
+
+.messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #fafafa;
+}
+
+.message {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.message.bot {
+  background: #e6f0ff;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.message.user {
+  text-align: right;
+  background: #d3d3d3;
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.input-area {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 0.5rem;
+  background: #fff;
+}
+
+.message-input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  resize: none;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin-right: 0.5rem;
+}
+
+.send-button {
+  background: #0080ff;
+  color: #fff;
+  border: none;
+  padding: 0 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.send-button:hover {
+  background: #006ce0;
+}
