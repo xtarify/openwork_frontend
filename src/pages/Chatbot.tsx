@@ -156,7 +156,6 @@ const Chatbot: React.FC<{ theme?: string }> = ({ theme }) => {
   return (
     <section className="step-section">
       <h2>Práctica de Entrevista</h2>
-      {/* Botón de Recibir Calificación/Feedback debajo del título */}
       <div style={{ marginBottom: '1rem' }}>
         <button className="primary-btn" onClick={() => navigate('/send-email')}>
           Recibir Calificación/Feedback
@@ -168,7 +167,12 @@ const Chatbot: React.FC<{ theme?: string }> = ({ theme }) => {
           {messages.map((msg, index) => (
             <div key={index} className={`message ${msg.sender}`}>
               {msg.sender === 'bot' ? (
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{msg.text}</ReactMarkdown>
+                <ReactMarkdown 
+                  remarkPlugins={[remarkGfm]}
+                  className="markdown-message"
+                >
+                  {msg.text}
+                </ReactMarkdown>
               ) : (
                 <span>{msg.text}</span>
               )}

@@ -211,17 +211,24 @@ body {
 }
 
 .message.bot {
+  align-self: flex-start;
   background: #e6f0ff;
-  padding: 0.5rem;
-  border-radius: 4px;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: left;
+  width: fit-content;
+  max-width: 80%;
 }
 
 .message.user {
-  text-align: right;
-  background: #d3d3d3;
-  display: inline-block;
-  padding: 0.5rem;
-  border-radius: 4px;
+  align-self: flex-end;
+  background: #0080ff;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: left;
+  width: fit-content;
+  max-width: 80%;
 }
 
 .input-area {
@@ -254,4 +261,19 @@ body {
 
 .send-button:hover {
   background: #006ce0;
+}
+
+/* Asegura que todo el contenido dentro de los mensajes esté alineado a la izquierda */
+.message p, 
+.message ul, 
+.message ol,
+.message li {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.message ul,
+.message ol {
+  padding-left: 20px;
 }
